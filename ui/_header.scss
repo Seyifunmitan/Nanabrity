@@ -1,0 +1,244 @@
+$primaryColor: #130A03;
+$secondaryColor: #e00c41;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* header styling not 
+note: responsive yet */
+
+
+header {
+    width: 100%;
+    height: 10vh;
+    box-shadow: 1px 1px 1px 2px rgba(211, 211, 211, 0.10);
+    background: rgb(255, 255, 255);
+    .innerHeader {
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        @include flex();
+        justify-content: space-around;
+    }
+}
+
+header .ham,
+.menu-toggle {
+    display: none;
+}
+
+.innerHeader .logo {
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.innerHeader .logo h1 a {
+    text-decoration: none;
+    transition: 0.2s ease-in;
+    color: $primaryColor;
+    text-shadow: 0px 1px 10px rgba(211, 211, 211, 0.7);
+    &:hover {
+        opacity: 0.4;
+        color: $secondaryColor;
+    }
+}
+
+.innerHeader nav {
+    width: 30%;
+}
+
+.innerHeader nav ul {
+    display: flex;
+    justify-content: flex-end;
+
+    li {
+        list-style: none;
+        padding: .8em;
+
+        a {
+            text-decoration: none;
+            transition: 0.2s ease-in;
+            color: $primaryColor;
+            text-shadow: 0px 1px 10px rgba(211, 211, 211, 0.7);
+            &:hover {
+                opacity: 0.4;
+                color: $secondaryColor;
+            }
+        }
+    }
+}
+
+.search {
+    width: 13%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    input {
+        width: 75%;
+        height: 28px;
+        border: none;
+        padding-left: .5em;
+        transition: 0.2s ease-in-out;
+        text-transform: capitalize;
+        outline: none;
+        color: $secondaryColor;
+        font-size: 11px;
+        background: rgba(211, 211, 211, 0.25);
+        border-radius: 2px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .innerHeader nav,
+    .search {
+        display: none;
+    }
+
+    .innerHeader .logo h1 a {
+        font-size: 1.05em;
+    }
+
+
+    .innerHeader .ham {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5%;
+        margin-left: 10em;
+
+        img {
+            width: 85%;
+            height: 80%;
+            cursor: pointer;
+        }
+    }
+
+    .menu-toggle {
+        width: 45%;
+        height: 40vh;
+        background: white;
+        display: flex;
+        margin-left: 23em;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        box-shadow: 2px 4px 15px -3px rgba(211, 211, 211, 0.44);
+        display: none;
+
+        ul {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+
+            li {
+                padding: 1em;
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+                    color: $secondaryColor
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 425px) {
+
+    .innerHeader nav,
+    .search {
+        display: none;
+    }
+
+    .innerHeader .logo h1 a {
+        font-size: 1em;
+    }
+
+
+    .innerHeader .ham {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 7%;
+        margin-left: 12em;
+
+        img {
+            width: 96%;
+            height: 94%;
+            cursor: pointer;
+        }
+    }
+
+    .menu-toggle {
+        width: 80%;
+        display: flex;
+        margin-left: 4em;
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 375px) {
+
+    .innerHeader nav,
+    .search {
+        display: none;
+    }
+
+    .innerHeader .logo h1 a {
+        font-size: 0.8em;
+    }
+
+    .innerHeader .ham {
+        width: 8%;
+
+        img {
+            width: 97%;
+            height: 95%;
+        }
+    }
+
+    .menu-toggle {
+        width: 90%;
+        margin-left: .4em;
+        display: none;
+    }
+}
+
+
+
+
+@media screen and (max-width: 320px) {
+
+    .innerHeader nav,
+    .search {
+        display: none;
+    }
+
+    .innerHeader .logo h1 a {
+        font-size: .8em;
+    }
+
+    .innerHeader .ham {
+        width: 8%;
+    }
+
+    .menu-toggle {
+        width: 90%;
+        display: flex;
+        margin-left: .5em;
+    }
+}
